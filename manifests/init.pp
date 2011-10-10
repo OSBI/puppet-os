@@ -31,7 +31,11 @@ class os {
         lucid: {
           include "os::ubuntu-${lsbdistcodename}"
         }
-
+		
+		natty: {
+          include "os::ubuntu-${lsbdistcodename}"
+        }
+        
         default: {
           fail "Unsupported Ubuntu version ${lsbdistcodename} in 'os' module"
         }

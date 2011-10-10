@@ -67,11 +67,11 @@ class ubuntu {
   # Timezone
   file { "/etc/localtime":
     ensure => present,
-    source => "file:///usr/share/zoneinfo/Europe/Zurich",
+    source => "file:///usr/share/zoneinfo/Europe/London",
   }
   file { "/etc/timezone":
     ensure  => present,
-    content => "Europe/Zurich",
+    content => "Europe/London",
   }
 
   # Kernel

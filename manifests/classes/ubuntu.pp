@@ -65,14 +65,14 @@ class ubuntu {
   }
 
   # Timezone
-  file { "/etc/localtime":
-    ensure => present,
-    source => "file:///usr/share/zoneinfo/Europe/London",
-  }
-  file { "/etc/timezone":
-    ensure  => present,
-    content => "Europe/London",
-  }
+  #file { "/etc/localtime":
+  #  ensure => present,
+  #  source => "file:///usr/share/zoneinfo/Europe/London",
+  #}
+  #file { "/etc/timezone":
+  #  ensure  => present,
+  #  content => "Europe/London",
+  #}
 
   # Kernel
   file { "/etc/modules":

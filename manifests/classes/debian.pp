@@ -58,10 +58,10 @@ class os::debian {
   }
 
   # Timezone
-  file { "/etc/localtime":
-    ensure => present,
-    source => "file:///usr/share/zoneinfo/Europe/Zurich",
-  }
+  #file { "/etc/localtime":
+  #  ensure => present,
+  #  source => "file:///usr/share/zoneinfo/Europe/Zurich",
+  #}
 
   #file { "/etc/timezone":
   #  ensure  => present,

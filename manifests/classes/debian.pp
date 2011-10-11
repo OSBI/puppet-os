@@ -63,10 +63,10 @@ class os::debian {
     source => "file:///usr/share/zoneinfo/Europe/Zurich",
   }
 
-  file { "/etc/timezone":
-    ensure  => present,
-    content => "Europe/Zurich\n",
-  }
+  #file { "/etc/timezone":
+  #  ensure  => present,
+  #  content => "Europe/Zurich\n",
+  #}
 
   # Kernel
   file { "/etc/modules":

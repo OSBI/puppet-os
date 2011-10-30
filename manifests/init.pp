@@ -35,7 +35,10 @@ class os {
 		natty: {
           include "os::ubuntu-${lsbdistcodename}"
         }
-        
+
+		maverick: {
+          include "os::ubuntu-${lsbdistcodename}"
+        }        
         default: {
           fail "Unsupported Ubuntu version ${lsbdistcodename} in 'os' module"
         }

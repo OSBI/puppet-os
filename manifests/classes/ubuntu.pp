@@ -9,7 +9,6 @@ class ubuntu {
   package {
     "cron": ensure => present;
     "nano": ensure => present;
-    "pwgen": ensure => present;
     "vim": ensure => present;
     "curl": ensure => present;
     "nmap": ensure => present;

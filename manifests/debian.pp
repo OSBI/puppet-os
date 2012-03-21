@@ -4,6 +4,7 @@ class os::debian {
   #
   package {
     "at":             ensure => present; # usefull for reboots...
+    "atop":           ensure => absent;
     "bc":             ensure => present;
     "bash-completion":ensure => present;
     "bzip2":          ensure => present;
@@ -14,34 +15,20 @@ class os::debian {
     "elinks":         ensure => present;
     "emacs21-common": ensure => absent;
     "emacs23-nox":    ensure => present; # for fredj (this comes from backports on Lenny)
-    "file":           ensure => present;
     "gettext":        ensure => present;
-    "iotop":          ensure => present;
-    "ipcalc":         ensure => present;
     "iproute":        ensure => present;
-    "iptraf":         ensure => present;
     "less":           ensure => present;
     "locate":         ensure => absent;
-    "lsof":           ensure => present;
     "lynx":           ensure => present;
     "mtr-tiny":       ensure => present;
-    "ngrep":          ensure => present;
-    "nmap":           ensure => present;
     "patch":          ensure => present;
-    "psmisc":         ensure => present;
     "pwgen":          ensure => present;
     "rdiff-backup":   ensure => present;
     "rsync":          ensure => present;
     "screen":         ensure => present;
-    "smartmontools":  ensure => present; # SMART monitoring
-    "strace":         ensure => present;
-    "tcpdump":        ensure => present;
-    "tiobench":       ensure => present; # Useful for doing IO benchmarks
     "tofrodos":       ensure => present;
-    "tshark":         ensure => present;
     "unzip":          ensure => present;
     "vim":            ensure => present;
-    "whois":          ensure => present;
     "xfsprogs":       ensure => present;
     "zip":            ensure => present;
   }
@@ -50,7 +37,7 @@ class os::debian {
   file { "/etc/profile":
     ensure => present,
     mode   => 644,
-    source => "puppet:///os/etc/profile-debian",
+    source => "puppet:///modules/os/etc/profile-debian",
   }
 
   file {"/etc/profile.d":
@@ -85,9 +72,17 @@ class os::debian {
   file { "/etc/environment":
     ensure => present,
     mode   => 644,
-    source => "puppet:///os/etc/environment",
+    source => "puppet:///modules/os/etc/environment",
     owner  => root,
     group  => root,
+  }
+
+  file {
+    ["/etc/logrotate.d/atop",
+     "/etc/logrotate.d/psaccs_atop",
+     "/etc/logrotate.d/psaccu_atop"]:
+    ensure  => absent,
+    require => Package["atop"],
   }
 
 }

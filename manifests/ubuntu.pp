@@ -1,4 +1,4 @@
-class ubuntu {
+class os::ubuntu {
   # fix 7376
   package { ["openssl", "openssh-server", "openssh-client", "openssh-blacklist", "ssl-cert" ]:
     ensure => latest,
@@ -11,18 +11,12 @@ class ubuntu {
     "nano": ensure => present;
     "vim": ensure => present;
     "curl": ensure => present;
-    "nmap": ensure => present;
-    "tshark": ensure => present;
-    "iptraf": ensure => present;
     "mtr-tiny": ensure => present;
-    "ipcalc": ensure => present;
     "cvs": ensure => present;
-    "smartmontools": ensure => present;
     "bzip2": ensure => present;
     "cadaver": ensure => present;
     "tofrodos": ensure => present;
     "lynx": ensure => present;
-    "lsof": ensure => present;
     "locales": ensure => present;
   }
   
@@ -31,14 +25,14 @@ class ubuntu {
   }
 
   # Disable PC Speaker
-  line {"disable pc speaker":
+  common::line {"disable pc speaker":
     line   => 'blacklist pcspkr',
     file   => '/etc/modprobe.d/blacklist.conf',
     ensure => present,
   }
 
   # Do not propose system upgrade
-  line {
+  common::line {
     "default release-upgrade prompt configuration removed":
       line   => 'prompt=normal',
       file   => '/etc/update-manager/release-upgrades',
@@ -60,7 +54,7 @@ class ubuntu {
     owner  => root,
     group  => root,
     mode   => 644,
-    source => "puppet:///os/etc/profile-ubuntu",
+    source => "puppet:///modules/os/etc/profile-ubuntu",
   }
 
   # Timezone

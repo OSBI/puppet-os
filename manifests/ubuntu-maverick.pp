@@ -1,2 +1,2 @@
-class os::ubuntu-maverick inherits ubuntu {
+class os::ubuntu-maverick inherits os::ubuntu {
 }

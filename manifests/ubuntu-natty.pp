@@ -1,2 +1,2 @@
-class os::ubuntu-natty inherits ubuntu {
+class os::ubuntu-natty inherits os::ubuntu {
 }

@@ -1,0 +1,62 @@
+{
+  "name": "Analytical Labs-os",
+  "author": "Tom Barber",
+  "description": "",
+  "license": "",
+  "project_page": "",
+  "source": "",
+  "summary": "",
+  "version": "1.0",
+  "checksums": {
+    "Modulefile": "13e13986b9123f4d417ccd8601097342",
+    "README": "6b59c482bd9820a7fb5e8b5a629723ca",
+    "files/etc/apt/sources.list.d/c2c-hardy.sources.list": "54030ca63c28e08abbaa54421037d642",
+    "files/etc/apt/sources.list.d/sources.list-c2c-etch": "94876c8f81e1c4c51ee365e6a29714c3",
+    "files/etc/apt/sources.list.d/sources.list-c2c-lenny": "c8ff79e70c8db6fd3918e8bcef067af2",
+    "files/etc/apt/sources.list.d/sources.list-debian-etch": "daa0de728daea46424135db4de44d823",
+    "files/etc/apt/sources.list.d/sources.list-debian-lenny": "6b766cec027d11e628772ef066800fa5",
+    "files/etc/apt/sources.list.d/ubuntu-hardy.sources.list": "6972815444345a6d48eb1c9e72b553be",
+    "files/etc/emacs/site-start.d/50c2c.el": "feff0b494f88206cb0da3a75f90fcd97",
+    "files/etc/environment": "446435bb27084145f0a80da889b924d7",
+    "files/etc/profile": "30773f25ad223dcd4ce700d51d11a2fd",
+    "files/etc/profile-debian": "932597b2b42d5b6fae5f7980dd27948f",
+    "files/etc/profile-ubuntu": "0cb38d3792948b9190304a38cc7beceb",
+    "files/locale.alias": "20f03d496eb74638d8259d6a04cf4e48",
+    "files/locale.gen": "e27b85bd71d5742929936c1fcb1d9601",
+    "manifests/apt_key_add.pp": "211dbef68789697c73be2ad2105e584e",
+    "manifests/backported_package.pp": "68064fe64b23d4b01aced4b5fe678e40",
+    "manifests/centos.pp": "5e7a4756880b7ebe38ed99e408bf0eca",
+    "manifests/classes/ubuntu-maverick.pp": "cfccdbd8f3c3391fc8886aa25be848d4",
+    "manifests/classes/ubuntu-natty.pp": "ecd28ed428dc29fc7299b0710f27c286",
+    "manifests/debian-lenny.pp": "985f56da56321a26514b5742b07d71ed",
+    "manifests/debian-squeeze.pp": "d26e93087aa4edbb6095d8b21ec9b22b",
+    "manifests/debian-wheezy.pp": "bfdaa2ec9f1c6e452ed77b3c7e0afdd1",
+    "manifests/debian.pp": "339500347b2b30ec7476161e443da58c",
+    "manifests/init.pp": "b40f6991d2986ff229725fe25a3fea0f",
+    "manifests/kernel_module.pp": "11dade1be3473603a0d7383678910f62",
+    "manifests/ubuntu-lucid.pp": "178d9667fc401b9b0121618c0bb1ffc0",
+    "manifests/ubuntu.pp": "39c228db6dfb318268ea271067a79197",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
+    "templates/apt-proxy.erb": "b83608224bb003570caef0c419505985",
+    "templates/backports.list.erb": "acf9d31da78c55dd513f429f5103d275",
+    "templates/c2c.list.erb": "c9dabee41c30439c3000074e231c44b6",
+    "templates/etc/adduser.conf.erb": "ce22396e59e91beb6ae53cb95e5c957c",
+    "templates/ubuntu.list.erb": "c1844ba4ee825e03651855a085fc7203",
+    "tests/init.pp": "0a2674cb6977f015866ee8b725ea167d"
+  },
+  "dependencies": [
+    {
+      "name": "Analytical Labs/common",
+      "versionRequirement": "\u003d\u003d1.0"
+    },
+    {
+      "name": "Analytical Labs/apt",
+      "versionRequirement": "\u003d\u003d1.0"
+    },
+    {
+      "name": "Analytical Labs/locales",
+      "versionRequirement": "\u003d\u003d1.0"
+    }
+  ]
+}

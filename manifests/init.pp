@@ -38,7 +38,10 @@ class os {
 
 		maverick: {
           include "os::ubuntu-${lsbdistcodename}"
-        }        
+        } 
+        precise: {
+          include "os::ubuntu-${lsbdistcodename}"
+        }          
         default: {
           fail "Unsupported Ubuntu version ${lsbdistcodename} in 'os' module"
         }

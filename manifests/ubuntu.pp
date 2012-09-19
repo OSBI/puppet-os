@@ -54,10 +54,10 @@ class os::ubuntu {
     ensure => present,
     source => 'file:///usr/share/zoneinfo/Europe/Zurich',
   }
-  file { '/etc/timezone':
-    ensure  => present,
-    content => 'Europe/Zurich',
-  }
+#  file { '/etc/timezone':
+#    ensure  => present,
+#    content => 'Europe/Zurich',
+#  }
 
   # Kernel
   file { '/etc/modules':

@@ -3,10 +3,11 @@ class os::debian-lenny {
   include os::debian
 
   # Disable PC Speaker
-  common::line {"disable pc speaker":
-    line   => 'blacklist pcspkr',
-    file   => '/etc/modprobe.d/blacklist',
-    ensure => present,
+  kmod::blacklist {'pcspkr': }
+
+  # Get rid of the old file
+  file {'/etc/modprobe.d/blacklist':
+    ensure => absent,
   }
 
   # general config for emacs (without temporary files ~ )
@@ -24,39 +25,6 @@ class os::debian-lenny {
     priority => "1001",
   }
 
-  #
-  # Locales
-  #
-
-  package {"locales-all":
-    ensure => absent,
-  }
-
-  package {"locales":
-    ensure => present,
-    require => File["/etc/locale.gen"],
-    notify => Exec["locale-gen"],
-  }
-
-  file {"/etc/locale.gen":
-    ensure  => present,
-    source  => "puppet:///modules/os/locale.gen",
-    notify => Exec["locale-gen"],
-  }
-
-  exec {"locale-gen":
-    refreshonly => true,
-    command => "locale-gen",
-    timeout => 30,
-    require => [File["/usr/share/locale/locale.alias"], Package["locales"], File["/etc/locale.gen"]],
-  }
-
-  # BUG: Smells hacky ?
-  file {"/usr/share/locale/locale.alias":
-    ensure => present,
-    source => "puppet:///modules/os/locale.alias",
-  }
-
   # SSL Configuration
   package {
     "ca-certificates": ensure => present;
@@ -71,11 +39,6 @@ class os::debian-lenny {
   exec {"sysctl-reload":
     command     => "sysctl -p",
     refreshonly => true,
-  }
-
-  # fix 14573
-  package {"debian-archive-keyring":
-    ensure => latest,
   }
 
   # fixes rt#14979

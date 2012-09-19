@@ -48,15 +48,15 @@
   "dependencies": [
     {
       "name": "Analytical Labs/common",
-      "versionRequirement": "\u003d\u003d1.0"
+      "version_requirement": "\u003d\u003d1.0"
     },
     {
       "name": "Analytical Labs/apt",
-      "versionRequirement": "\u003d\u003d1.0"
+      "version_requirement": "\u003d\u003d1.0"
     },
     {
       "name": "Analytical Labs/locales",
-      "versionRequirement": "\u003d\u003d1.0"
+      "version_requirement": "\u003d\u003d1.0"
     }
   ]
 }
